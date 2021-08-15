@@ -16,7 +16,7 @@ const connect = function() {
     conn.write('Name: Max');
     const moves = ['up', 'left', 'down', 'down', 'right'];
     for (let i = 0; i < moves.length; i++) {
-      setTimeout(() => conn.write(`Move: ${moves[i]}`), 1000 + i * 100);
+      setTimeout(() => conn.write(`Move: ${moves[i]}`), 1000 + i * 500);
     }
     // setTimeout(() => conn.write('Move: up'), 1050);
     // setTimeout(() => conn.write('Move: left'), 1100);
@@ -28,11 +28,8 @@ const connect = function() {
 
   conn.on('data', () => {
     console.log('Server says: you ded cuz you idled');
+    // process.exit();
   });
-
-  // conn.on('data', () => {
-  //   process.exit();
-  // });
 
   return conn;
 };
