@@ -1,10 +1,8 @@
 const net = require('net');
+const { host, port, names } = require('./constants'); 
 
 const connect = function() {
-  const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
-  });
+  const conn = net.createConnection({ host, port });
 
   conn.setEncoding('utf8');
 
@@ -13,7 +11,7 @@ const connect = function() {
   });
 
   conn.on('connect', () => {
-    conn.write('Name: Max');
+    conn.write(`Name: ${names}`);
     // const moves = ['up', 'left', 'down', 'down', 'right'];
     // for (let i = 0; i < moves.length; i++) {
     //   setTimeout(() => conn.write(`Move: ${moves[i]}`), 1000 + i * 500);
