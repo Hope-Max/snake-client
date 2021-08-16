@@ -14,10 +14,10 @@ const connect = function() {
 
   conn.on('connect', () => {
     conn.write('Name: Max');
-    const moves = ['up', 'left', 'down', 'down', 'right'];
-    for (let i = 0; i < moves.length; i++) {
-      setTimeout(() => conn.write(`Move: ${moves[i]}`), 1000 + i * 500);
-    }
+    // const moves = ['up', 'left', 'down', 'down', 'right'];
+    // for (let i = 0; i < moves.length; i++) {
+    //   setTimeout(() => conn.write(`Move: ${moves[i]}`), 1000 + i * 500);
+    // }
     // setTimeout(() => conn.write('Move: up'), 1050);
     // setTimeout(() => conn.write('Move: left'), 1100);
     // setTimeout(() => conn.write('Move: down'), 1150);
