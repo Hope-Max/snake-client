@@ -13,15 +13,37 @@ const setupInput = function(conn) {
       if (key === '\u0003') {
         process.exit();
       }
-      if (key === 'w') {
+
+      switch (key) {
+      case 'w':
         connection.write('Move: up');
-      } else if (key === 'a') {
+        break;
+      case 'a':
         connection.write('Move: left');
-      } else if (key === 's') {
+        break;
+      case 's':
         connection.write('Move: down');
-      } else if (key === 'd') {
+        break;
+      case 'd':
         connection.write('Move: right');
+        break;
+      case '1':
+        connection.write('Say: Hello!');
+        break;
+      case '2':
+        connection.write('Say: Welcome!');
+        break;
+      case '3':
+        connection.write('Say: I\'m the longest one!');
+        break;
+      case '4':
+        connection.write('Say: I\'m hungry!');
+        break;
+      case '5':
+        connection.write('Say: I can\'t eat anymore!');
+        break;
       }
+
     });
   };
 
