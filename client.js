@@ -1,32 +1,18 @@
+// TCP connection
 const net = require('net');
-const { host, port, names } = require('./constants'); 
+const { host, port, names } = require('./constants');
 
 const connect = function() {
   const conn = net.createConnection({ host, port });
-
   conn.setEncoding('utf8');
 
   conn.on('connect', () => {
     console.log('Successfully connected to game server!');
-  });
-
-  conn.on('connect', () => {
     conn.write(`Name: ${names}`);
-    // const moves = ['up', 'left', 'down', 'down', 'right'];
-    // for (let i = 0; i < moves.length; i++) {
-    //   setTimeout(() => conn.write(`Move: ${moves[i]}`), 1000 + i * 500);
-    // }
-    // setTimeout(() => conn.write('Move: up'), 1050);
-    // setTimeout(() => conn.write('Move: left'), 1100);
-    // setTimeout(() => conn.write('Move: down'), 1150);
-    // setTimeout(() => conn.write('Move: down'), 1200);
-
-    // setInterval((direction) => conn.write(`Move: ${direction}`), 1000, 'up');
   });
-
-  conn.on('data', () => {
-    console.log('Server says: you ded cuz you idled');
-    // process.exit();
+  // Listen for the data event and receive messages from server 
+  conn.on('data', (data) => {
+    console.log('Server says:', data);
   });
 
   return conn;

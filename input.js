@@ -1,4 +1,4 @@
-const { keys} = require('./constants');
+const { movement, messages } = require('./constants');
 let connection;
 
 const setupInput = function(conn) {
@@ -16,10 +16,15 @@ const setupInput = function(conn) {
         process.exit();
       }
 
-      if (Object.keys(keys).includes(key)) {
-        connection.write(keys[key]);
-      }
+      // Movement commands
+      connection.write(`Move: ${movement[key]}`);
 
+      // Canned messages
+      if (messages[key]) {
+        const message = messages[key];
+        connection.write(`Say: ${message}`);
+      }
+      
     });
   };
 

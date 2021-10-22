@@ -1,16 +1,18 @@
 const host = 'localhost';
 const port = 50541;
-const keys = {
-  w: 'Move: up',
-  a: 'Move: left',
-  s: 'Move: down',
-  d: 'Move: right',
-  1: 'Say: Hello!',
-  2: 'Say: Welcome!',
-  3: 'Say: I\'m the longest one!',
-  4: 'Say: I\'m hungry!',
-  5: 'Say: I can\'t eat anymore!'
+const movement = {
+  w: 'up',
+  a: 'left',
+  s: 'down',
+  d: 'right'
 };
-const names = process.argv[2] ? process.argv[2] : 'UNK'
+const messages = {
+  1: 'Hello!',
+  2: 'Welcome!',
+  3: 'I\'m the longest one!',
+  4: 'I\'m hungry!',
+  5: 'I can\'t eat anymore!'
+};
+const names = process.argv[2] ? process.argv[2] : 'UNK';
 
-module.exports = { host, port, keys, names };
+module.exports = { host, port, movement, messages, names };
