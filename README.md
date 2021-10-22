@@ -8,8 +8,8 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["screenshot of the game board"](#)
-!["screenshot of the movement and messages"](#)
+!["screenshot of the game board"](https://github.com/Hope-Max/snake-client/blob/master/docs/game_board.png?raw=true)
+!["screenshot of the movement and messages"](https://github.com/Hope-Max/snake-client/blob/master/docs/movement_message.png?raw=true)
 
 ## Functionalities
 
